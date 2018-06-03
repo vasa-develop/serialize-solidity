@@ -30,4 +30,25 @@ contract Serialize is Seriality{
         
         return (buffer);
     }
+
+    function getString(bytes buffer) public view returns(string string1, string string2){
+
+    	//64 byte is needed for safe storage of a single string.
+    	//In this example we are returning 2 strings
+    	uint offset = 64*2;
+
+    	buffer = new  bytes(offset);
+
+    	string1 = new string(32);
+    	string2 = new string(32);
+
+    	bytesToString(offset, buffer, bytes(string2));
+        offset -= sizeOfString(string2);
+
+		bytesToString(offset, buffer, bytes(string2));
+        offset -= sizeOfString(string2);
+
+        return(string1, string2);
+    }
+
 }
