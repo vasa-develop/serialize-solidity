@@ -1,6 +1,6 @@
-var hexStringFromSolidity = "<PASTE THE SOLIDTY OUTPUT HERE>"
+var hexStringFromSolidity = "<PASTE THE SOLIDTY BYTE OUTPUT HERE>"
 
-var z = convert(hexStringFromSolidity);
+var stringArray = convert(hexStringFromSolidity);
 
 
 var convert = function hexToStr(hex) {
